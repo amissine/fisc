@@ -1,0 +1,24 @@
+{
+  "name": "fisc",
+  "version": "1.0.0",
+  "description": "Financial Institution Software Component to test with fist",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amissine/fist.git"
+  },    
+  "main": "index.js",
+  "scripts": {
+    "test": "./run_locally.sh"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.15.3",
+    "babel": "^5.8.20",
+    "body-parser": "^1.16.1",
+    "express": "^4.14.1",
+    "express-http-proxy": "^0.11.0",
+    "lodash": "^4.17.10",
+    "morgan": "^1.8.1"
+  }
+}
