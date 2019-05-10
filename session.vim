@@ -10,7 +10,7 @@ endif
 set shortmess=aoO
 badd +16 package.json
 badd +1 index.js
-badd +0 run_locally.sh
+badd +4 run_locally.sh
 badd +0 tests/index.js
 argglobal
 silent! argdel *
@@ -84,7 +84,7 @@ setlocal fdn=20
 setlocal fen
 1
 normal! zo
-let s:l = 4 - ((3 * winheight(0) + 5) / 11)
+let s:l = 4 - ((2 * winheight(0) + 5) / 11)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
