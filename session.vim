@@ -10,8 +10,8 @@ endif
 set shortmess=aoO
 badd +16 package.json
 badd +1 index.js
-badd +4 run_locally.sh
-badd +0 tests/index.js
+badd +6 run_locally.sh
+badd +54 tests/index.js
 argglobal
 silent! argdel *
 $argadd package.json
@@ -21,20 +21,16 @@ wincmd _ | wincmd |
 split
 wincmd _ | wincmd |
 split
-wincmd _ | wincmd |
-split
-3wincmd k
-wincmd w
+2wincmd k
 wincmd w
 wincmd w
 set nosplitbelow
 set nosplitright
 wincmd t
 set winminheight=1 winheight=1 winminwidth=1 winwidth=1
-exe '1resize ' . ((&lines * 11 + 24) / 48)
-exe '2resize ' . ((&lines * 11 + 24) / 48)
-exe '3resize ' . ((&lines * 11 + 24) / 48)
-exe '4resize ' . ((&lines * 10 + 24) / 48)
+exe '1resize ' . ((&lines * 15 + 24) / 48)
+exe '2resize ' . ((&lines * 14 + 24) / 48)
+exe '3resize ' . ((&lines * 15 + 24) / 48)
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -45,11 +41,11 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 15 - ((1 * winheight(0) + 5) / 11)
+let s:l = 17 - ((1 * winheight(0) + 7) / 15)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-15
+17
 normal! 08|
 lcd ~/project/fisc
 wincmd w
@@ -64,32 +60,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 5) / 11)
+let s:l = 17 - ((1 * winheight(0) + 7) / 14)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
+17
 normal! 0
-lcd ~/project/fisc
-wincmd w
-argglobal
-edit ~/project/fisc/run_locally.sh
-setlocal fdm=marker
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-1
-normal! zo
-let s:l = 4 - ((2 * winheight(0) + 5) / 11)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-4
-normal! 037|
 lcd ~/project/fisc
 wincmd w
 argglobal
@@ -103,7 +79,7 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 16 - ((4 * winheight(0) + 5) / 10)
+let s:l = 16 - ((6 * winheight(0) + 7) / 15)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -111,10 +87,9 @@ normal! zt
 normal! 023|
 wincmd w
 3wincmd w
-exe '1resize ' . ((&lines * 11 + 24) / 48)
-exe '2resize ' . ((&lines * 11 + 24) / 48)
-exe '3resize ' . ((&lines * 11 + 24) / 48)
-exe '4resize ' . ((&lines * 10 + 24) / 48)
+exe '1resize ' . ((&lines * 15 + 24) / 48)
+exe '2resize ' . ((&lines * 14 + 24) / 48)
+exe '3resize ' . ((&lines * 15 + 24) / 48)
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf

@@ -2,8 +2,6 @@ import {CreditPaymentTest} from './credit_payment_test';
 import {PendingTest} from './pending_test';
 import {XlmPaymentTest} from './xlm_payment_test';
 
-console.log('fisc: process.env.BRIDGE_VERSION=', process.env.BRIDGE_VERSION)
-
 let tests = [
   new CreditPaymentTest(),
   new PendingTest(),
